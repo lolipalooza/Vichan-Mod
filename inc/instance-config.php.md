@@ -100,6 +100,30 @@ __Nota__: no necesariamente es la configuración más óptima.
  * ====================
  */
 	
+	// "Wiki" markup syntax ($config['wiki_markup'] in pervious versions):
+	
+	/** Puedes establecer la ruta que desees para el archivo, y deberás subir el archivo a dicha ruta para que funcione, obviamente! **/
+	$config['markup'][] = array("*:v*", "<img src=\"".$config['root']."/img/smileys/pacman.png\" alt=\":v\" title=\"Pacman\">");
+	
+	// Symbols
+	$config['markup'][] = array("/'''(.+?)'''/", "<strong>\$1</strong>");
+	$config['markup'][] = array("/''(.+?)''/", "<em>\$1</em>");
+	$config['markup'][] = array("/__(.+?)__/", "<u>\$1</u>");
+	$config['markup'][] = array("/~~(.+?)~~/", "<strike>\$1</strike>");
+	$config['markup'][] = array("/\*\*(.+?)\*\*/", "<span class=\"spoiler\">\$1</span>");
+	$config['markup'][] = array("/^[ |\t]*==(.+?)==[ |\t]*$/m", "<span class=\"heading\">\$1</span>");
+	$config['markup'][] = array("/\^\^\^(.+?)\^\^\^/", "<span class=\"smooth-blink\">\$1</span>");
+	$config['markup'][] = array("/\^\^(.+?)\^\^/", "<span class=\"blink\">\$1</span>");
+	$config['markup'][] = array("/^&lt;(.+?)$/m", "<span class=\"quote-alt\">&lt;\$1</span>");
+	
+	// BBCodes
+	$config['markup'][] = array("/\[b\](.+?)\[\/b\]/", "<strong>\$1</strong>");
+	$config['markup'][] = array("/\[i\](.+?)\[\/i\]/", "<em>\$1</em>");
+	$config['markup'][] = array("/\[u\](.+?)\[\/u\]/", "<u>\$1</u>");
+	$config['markup'][] = array("/\[s\](.+?)\[\/s\]/", "<strike>\$1</strike>");
+	$config['markup'][] = array("/\[spoiler\](.+?)\[\/spoiler\]/", "<span class=\"spoiler\">\$1</span>");
+	$config['markup'][] = array("/\[blink\](.+?)\[\/blink\]/", "<span class=\"blink\">\$1</span>");
+	$config['markup'][] = array("/\[sblink\](.+?)\[\/sblink\]/", "<span class=\"smooth-blink\">\$1</span>");
 
 /*
  * ====================

@@ -1206,3 +1206,36 @@ table.fileboard .intro a {
 div.mix {
 	display: inline-block;
 }
+
+/*=====================================
+ * Formatos para textos
+ ======================================*/
+span.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, start);
+}
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+span.smooth-blink {
+    animation-duration: 1s;
+    animation-name: smooth-blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes smooth-blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+span.quote-alt {
+	color: #b83434;
+}
