@@ -99,29 +99,7 @@ __Nota__: no necesariamente es la configuración más óptima.
  *  Markup settings
  * ====================
  */
-
-	// "Wiki" markup syntax ($config['wiki_markup'] in pervious versions):
-	$config['markup'][] = array("*:v*", "<img src=\"../../pacman.png\" alt=\":v\" title=\"Pacman\">");
 	
-	// Symbols
-	$config['markup'][] = array("/'''(.+?)'''/", "<strong>\$1</strong>");
-	$config['markup'][] = array("/''(.+?)''/", "<em>\$1</em>");
-	$config['markup'][] = array("/__(.+?)__/", "<u>\$1</u>");
-	$config['markup'][] = array("/~~(.+?)~~/", "<strike>\$1</strike>");
-	$config['markup'][] = array("/\*\*(.+?)\*\*/", "<span class=\"spoiler\">\$1</span>");
-	$config['markup'][] = array("/^[ |\t]*==(.+?)==[ |\t]*$/m", "<span class=\"heading\">\$1</span>");
-	$config['markup'][] = array("/\^\^\^(.+?)\^\^\^/", "<span class=\"smooth-blink\">\$1</span>");
-	$config['markup'][] = array("/\^\^(.+?)\^\^/", "<span class=\"blink\">\$1</span>");
-	$config['markup'][] = array("/^&lt;(.+?)$/m", "<span class=\"quote-alt\">&lt;\$1</span>");
-	
-	// BBCodes
-	$config['markup'][] = array("/\[b\](.+?)\[\/b\]/", "<strong>\$1</strong>");
-	$config['markup'][] = array("/\[i\](.+?)\[\/i\]/", "<em>\$1</em>");
-	$config['markup'][] = array("/\[u\](.+?)\[\/u\]/", "<u>\$1</u>");
-	$config['markup'][] = array("/\[s\](.+?)\[\/s\]/", "<strike>\$1</strike>");
-	$config['markup'][] = array("/\[spoiler\](.+?)\[\/spoiler\]/", "<span class=\"spoiler\">\$1</span>");
-	$config['markup'][] = array("/\[blink\](.+?)\[\/blink\]/", "<span class=\"blink\">\$1</span>");
-	$config['markup'][] = array("/\[sblink\](.+?)\[\/sblink\]/", "<span class=\"smooth-blink\">\$1</span>");
 
 /*
  * ====================
@@ -213,12 +191,6 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['additional_javascript'][] = 'js/webm-settings.js';
 	$config['additional_javascript'][] = 'js/expand-video.js';
 	$config['additional_javascript'][] = 'js/youtube.js';
-	$config['additional_javascript'][] = 'js/ytlinks.js';
-	
-	$config['additional_javascript'][] = 'js/chan-de-carton.js';
-
-	//$config['additional_javascript'][] = 'js/happy-chon.js';
-	//$config['additional_javascript'][] = 'js/shinku.js';
 	
 	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
 /*
@@ -235,13 +207,7 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['embedding'] = array(
 		array(
 			'/^https?:\/\/(\w+\.)?youtube\.com\/watch\?v=([a-zA-Z0-9\-_]{10,11})(&.+)?$/i',
-			//'<iframe style="float: left;margin: 10px 20px;" width="%%tb_width%%" height="%%tb_height%%" frameborder="0" id="ytplayer" src="https://www.youtube.com/embed/$2" allowfullscreen></iframe>'
-			'<p class="fileinfo ytinfo"><a href="https://www.youtube.com/watch?v=$2" target="_blank">Enlace a YouTube</a></p>
-			<div class="video-container" data-servicio="youtube" data-video="$2">
-				<a href="https://www.youtube.com/watch?v=$2" target="_blank" class="file">
-					<img style="max-width:%%tb_width%%px" src="//img.youtube.com/vi/$2/0.jpg" class="post-image">
-				</a>
-			</div>'
+			'<iframe style="float: left;margin: 10px 20px;" width="%%tb_width%%" height="%%tb_height%%" frameborder="0" id="ytplayer" src="https://www.youtube.com/embed/$2" allowfullscreen></iframe>'
 		),
 		array(
 			'/^https?:\/\/(\w+\.)?vimeo\.com\/(\d{2,10})(\?.+)?$/i',
