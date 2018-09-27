@@ -48,7 +48,7 @@ __Nota__: no necesariamente es la configuración más óptima.
 	$config['threads_per_page'] = 10;
 	$config['max_pages'] = 20;
 	$config['threads_preview'] = 5;
-	$config['root'] = '';
+	$config['root'] = '';	/** Este campo debes conservarlo de acuerdo a como lo tenías en un inicio. Es "/" si deseas que la raíz de tu imageboard sea htdocs o public_html o es "/titulo/" si la raíz es "htdocs/titulo" ó "public_html/titulo" **/
 	$config['secure_trip_salt'] = 'MmU2OWQyNWYwZjIwNzE0YTdkNzc1OD';
 
 
