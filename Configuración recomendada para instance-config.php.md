@@ -10,6 +10,8 @@ actualizar tu versión de _Vichan_.
 Sin embargo, si careces totalmente de los conocimientos y no tienes tiempo o ganas, aquí te dejo la versión de `instance-config.php`
 con la que trabaja _La Sociedad de los Lolchanesmuertos_.
 
+__Nota__: no necesariamente es la configuración más óptima.
+
 ```
 <?php
 
@@ -23,7 +25,9 @@ con la que trabaja _La Sociedad de los Lolchanesmuertos_.
 
 	$config['php_md5'] = true;
 
-	$config['db']['server'] = 'localhost';
+	/* ¡Estos campos los tienes que rellenar tú, de acuerdo a tu servidor y tu base de datos!
+		o en el caso de que ya los tengas, no debes modificarlos! */
+	$config['db']['server'] = '';
 	$config['db']['database'] = '';
 	$config['db']['prefix'] = '';
 	$config['db']['user'] = '';
@@ -48,19 +52,9 @@ con la que trabaja _La Sociedad de los Lolchanesmuertos_.
 	$config['secure_trip_salt'] = 'MmU2OWQyNWYwZjIwNzE0YTdkNzc1OD';
 
 
-// Changes made via web editor by "admin" @ Fri, 03 Jul 2015 16:54:42 -0700:
-$config['debug'] = true;
-$config['debug_explain'] = true;
-
-
-// Changes made via web editor by "admin" @ Fri, 03 Jul 2015 17:18:50 -0700:
-$config['debug'] = false;
-$config['verbose_errors'] = false;
-$config['debug_explain'] = false;
-
-
-// Changes made via web editor by "admin" @ Fri, 03 Jul 2015 17:43:49 -0700:
-$config['verbose_errors'] = true;
+	$config['debug'] = false;
+	$config['debug_explain'] = false;
+	$config['verbose_errors'] = true;
 
 
 
@@ -86,6 +80,10 @@ $config['verbose_errors'] = true;
 	$config['allow_upload_by_url'] = true;
 	// The timeout for the above, in seconds.
 	$config['upload_by_url_timeout'] = 1000;
+	
+	// Example: Custom tripcodes. The below example makes a tripcode of "#test123" evaluate to "!HelloWorld".
+	// Example: Custom secure tripcode.
+	//$config['custom_tripcode']['##securetrip'] = '!!somethingelse';
 	
 /*
 * ====================
@@ -176,14 +174,16 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	 * with groups. Each array() in $config['boards'] represents a new square bracket group.
 	 */
 
-	$config['boards'] = array(
+	
+	/** Opcional: debes modificarlo de acuerdo a tus necesidades **/
+	/*$config['boards'] = array(
 		array('home' => ''),
 		array('b', 'arch', 'pro', 'h', 'q'),
 		array(
-			//'recent' => '/recent.html',
+			'recent' => '/recent.html',
 			'mod' => '/mod.php'
 		)
-	);
+	);*/
 
 	// Show "Catalog" link in page navigation. Use with the Catalog theme.
 	$config['catalog_link'] = 'catalog.html';
@@ -219,6 +219,8 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 
 	//$config['additional_javascript'][] = 'js/happy-chon.js';
 	//$config['additional_javascript'][] = 'js/shinku.js';
+	
+	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
 /*
  * ====================
  *  Video embedding
