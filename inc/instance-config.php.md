@@ -179,11 +179,12 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	
 	/** Opcional: debes modificarlo de acuerdo a tus necesidades **/
 	/*$config['boards'] = array(
-		array('home' => ''),
-		array('b', 'arch', 'pro', 'h', 'q'),
+		array('home' => $config['root']),
+		array('a', 'b', 'c', 'd', 'e'),
+		array('n', 'p', 'x', 'h', 'l'),
 		array(
-			'recent' => '/recent.html',
-			'mod' => '/mod.php'
+			'recent' => $config['root'] . 'recent.html',
+			'mod' => $config['root'] . 'mod.php'
 		)
 	);*/
 
