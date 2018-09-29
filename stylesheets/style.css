@@ -91,7 +91,7 @@ form table input {
   height: auto;
 }
 
-input[type="text"],input[type="password"],textarea {
+input[type="text"],input[type="password"],textarea, select {
   border: 1px solid #a9a9a9;
   text-indent: 0;
   text-shadow: none;
@@ -1239,3 +1239,40 @@ span.smooth-blink {
 span.quote-alt {
 	color: #b83434;
 }
+
+/*=====================================
+ * Funciones perronas de emilio
+ ======================================*/
+ 
+/***** Dados ****/
+span.xl-dice { border: 2px solid #0b3b24; background: #04b45f; color: black; font-weight: bold; }
+span.xl-dice-result { border: 2px solid #0b3b24; background: #0b3b24; color: white; }
+span.lg-dice { border: 2px solid #0b3b24; background: #04b45f; color: black; font-weight: bold; }
+span.lg-dice-result { border: 2px solid #0b3b24; background: #0b3b24; color: white; }
+span.md-dice { border: 2px solid #0b3b24; background: #04b45f; color: black; font-weight: bold; }
+span.md-dice-result { border: 2px solid #0b3b24; background: #0b3b24; color: white; }
+span.sm-dice { border: 2px solid #0b3b24; background: #04b45f; color: black; font-weight: bold; }
+span.sm-dice-result { border: 2px solid #0b3b24; background: #0b3b24; color: white; }
+span.xs-dice { border: 2px solid #0b3b24; background: #04b45f; color: black; font-weight: bold; }
+span.xs-dice-result { border: 2px solid #0b3b24; background: #0b3b24; color: white; }
+span.coin { border: 2px solid #afafaf; background: #5a5555; color: white; font-weight: bold; }
+span.coin-result { border: 2px solid #afafaf; background: #afafaf; color: white; font-weight:bold; }
+
+/***** Ruleta ****/
+span.ruleta { background: black; color: red; font-weight: bold; padding: 0 5px; }
+span.fuscazo { color: red; font-weight: bold; }
+
+/***** Créditos *****/
+span.zeebo { background: blue; color: white; font-weight: bold; }
+span.zeebo-total { background: white; color: blue; font-weight: bold; }
+span.monstro { background: #a34318; color: black; font-weight: bold; }
+span.monstro-total { background: #262323; color: red; font-weight: bold; }
+span.carton { background: rgb(170, 166, 155); font-weight: bold; color: rgb(255, 250, 237); }
+span.carton-total { background: rgb(90, 89, 82); color: rgb(219, 214, 178); }
+span.premium { border: 2px solid black; background: yellow; color: black; font-weight: bold; }
+span.premium-total { border: 2px solid black; background: black; color: yellow; font-weight: bold; }
+span.qcreditos { background: rgb(57, 53, 26); font-weight: bold; color: rgb(194, 169, 189); }
+span.qcreditos-total { background: rgb(180, 43, 43); color: rgb(255, 175, 124); font-weight: bold; font-style: italic; }
+
+/**** Fortuna ****/
+span.fortuna {background: #01aa55; color: yellow; font-weight: bold;}

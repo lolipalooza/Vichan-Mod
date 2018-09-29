@@ -216,6 +216,8 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['additional_javascript'][] = 'js/expand-video.js';
 	$config['additional_javascript'][] = 'js/youtube.js';
 	
+	$config['additional_javascript'][] = 'js/cartonchan.js';
+	
 	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
 /*
  * ====================
@@ -272,4 +274,79 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 
 	// "Move" a thread to another board (EXPERIMENTAL; has some known bugs)
 	$config['mod']['move'] = ADMIN;
+	
+	
+	
+/*
+ * ====================
+ *  Juguetes de email
+ * ====================
+ */
+
+	/***
+	Personaliza aquí todo lo relacionado a los juguetes de email
+	ésto no viene por defecto en vichan, ha sido agregado en esta modificación
+	***/
+	
+	/***Dados***/
+	$config['dados'] = '<span class="%s">Haz tirado un dado de %s caras, salió:</span>
+		<span class="%s-result">%s</span><br /><br />';
+	
+	/***Moneda***/
+	$config['moneda'] = '<span class="%s">Haz arrojado una moneda, salió:</span>
+		<span class="%s-result">'.(rand(0,1)?'cara':'cruz').'</span><br /><br />';
+	
+	/***Ruleta***/
+	$config['ruleta']['mensajes'] = array();
+	
+	// El mensaje que aparece cuando te das un tiro
+	// (configura tantos como desees y será mostrado uno de éstos de forma aleatoria).
+	$config['ruleta']['mensajes'][] = "BANG! El usuario se pegó un fuzcaso!";
+	$config['ruleta']['mensajes'][] = "BANG! El usuario se dió un tiro!";
+	$config['ruleta']['mensajes'][] = "BANG! El usuario se voló la cien de un tiro!";
+	$config['ruleta']['mensajes'][] = "BANG! El usuario se voló la tapa de los sesos!";
+
+	// El mensaje que aparece cuando fallas
+	$config['ruleta']['default'] = '*click*';
+	
+	$config['ruleta']['body1'] = '<span class="ruleta">Ruleta</span>:';
+	$config['ruleta']['body2'] = '<span class="fuscazo">%s</span>';
+	
+	// El mensaje que aparece en la pantalla de Ban cuando te das un tiro
+	$config['ruleta']['ban']['mensajes'] = array();
+	
+	$config['ruleta']['ban']['mensajes'][] = "¡Te volaste la tapa de los sesos jugando a la ruleta! ¿Ahora quién va a limpiar ese desastre? Tú no, definitivamente...";
+	$config['ruleta']['ban']['mensajes'][] = "¡Te diste un fuscazo pero si bien dado!";
+	$config['ruleta']['ban']['mensajes'][] = "¡Te pegaste un pepazo en la cien por andar jugando a la fusca cabrón!";
+	$config['ruleta']['ban']['mensajes'][] = "¡Te diste un tiro creyendo que jugar a la ruleta rusa no haría daño!";
+	$config['ruleta']['ban']['mensajes'][] = "¡Jugando a la fusca dejaste todos tus sesos desparramados por todo el chan!";
+	
+	/***Créditos***/
+	// Agrega tantos tipos de créditos como lo desees, junto con el formato en el que quieres que aparesca
+	$config['creditos']['#creditos']		= '<span class="zeebo">Mira vos qué interesante, te dejo</span><span class="zeebo-total">: '.rand(2,1000).' puntines ché!</span>';
+	$config['creditos']['#minicreditos']	= '<span class="carton">Mira vos qué interesante, te dejo</span><span class="carton-total">: 1 puntín!</span>';
+	$config['creditos']['#premium']			= '<span class="premium">Mira vos que interesante, te dejo</span><span class="premium-total">: %d puntines gold!</span>';
+	$config['creditos']['#qcreditos']		= '<span class="qcreditos">No pos qué perrón, te quito</span><span class="qcreditos-total">: %d puntines por pendejo...</span>';
+	
+	/***Fortunas***/
+	$config['fortunas'] = array();
+	
+	$config['fortunas'][] = 'Coloca tus fortunas aquí.',
+	$config['fortunas'][] = '¡Coloca cuantas fortunas quieras!',
+
+	/***Namefag***/
+	$g = rand(0,1); // Gender
+	
+	$config['namefag']['firstname'] = array();
+	$config['namefag']['lastname'] = array();
+	
+	// define tantos "firstname" y "lastname" como quieras
+	/** Nota como género masculino seimpre aparece en el caso true y el femenino en el caso false
+	Puedes ponerlo como quieras pero deberás ser consistente en el orden **/
+	
+	$config['namefag']['firstname'][] = 'Aspie';
+	$config['namefag']['firstname'][] = $g?'Anon':'Femanon';
+	
+	$config['namefag']['lastname'][] = 'Kawaii!';
+	$config['namefag']['lastname'][] = $g?'loleador':'loleadora';
 ```

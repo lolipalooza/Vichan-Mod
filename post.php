@@ -6,6 +6,7 @@
 require_once 'inc/functions.php';
 require_once 'inc/anti-bot.php';
 require_once 'inc/bans.php';
+require_once 'inc/cartonchan.php';
 
 if ((!isset($_POST['mod']) || !$_POST['mod']) && $config['board_locked']) {
     error("Board is locked");
@@ -793,6 +794,24 @@ if (isset($_POST['delete'])) {
 	$post['tracked_cites'] = markup($post['body'], true);
 
 	
+	// Funciones perronas de email
+	$post_ef = [
+		'name' => $post['name'],
+		'body' => $post['body'],
+		'email' => $post['email'],
+		'fuscazo' => false
+	];
+	$post_ef = email_dados($post_ef);
+	$post_ef = email_ruleta($post_ef);
+	$post_ef = email_creditos($post_ef);
+	$post_ef = email_fortuna($post_ef);
+	$post_ef = email_namefag($post_ef);
+	
+	$post['name'] = $post_ef['name'];
+	$post['body'] = $post_ef['body'];
+	$post['email'] = $post_ef['email'];
+
+	
 	
 	if ($post['has_file']) {
 		$md5cmd = false;
@@ -1225,6 +1244,9 @@ if (isset($_POST['delete'])) {
 		rebuildThemes('post-thread', $board['uri']);
 	else
 		rebuildThemes('post', $board['uri']);
+	
+	if ($post_ef['fuscazo'])
+		ruleta___darse_un_fuscazo($_SERVER['REMOTE_ADDR'], $board['uri']);
 	
 } elseif (isset($_POST['appeal'])) {
 	if (!isset($_POST['ban_id']))
