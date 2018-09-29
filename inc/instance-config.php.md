@@ -359,8 +359,8 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	// Agrega tantos tipos de créditos como lo desees, junto con el formato en el que quieres que aparesca
 	$config['creditos']['#creditos']		= '<span class="zeebo">Mira vos qué interesante, te dejo</span><span class="zeebo-total">: '.rand(2,1000).' puntines ché!</span>';
 	$config['creditos']['#minicreditos']	= '<span class="zeebo">Mira vos qué interesante, te dejo</span><span class="zeebo-total">: 1 puntín!</span>';
-	$config['creditos']['#premium']			= '<span class="premium">Mira vos que interesante, te dejo</span><span class="premium-total">: %d puntines gold!</span>';
-	$config['creditos']['#qcreditos']		= '<span class="qcreditos">No pos qué perrón, te quito</span><span class="qcreditos-total">: %d puntines por pendejo...</span>';
+	$config['creditos']['#premium']			= '<span class="premium">Mira vos que interesante, te dejo</span><span class="premium-total">: '.rand(2,100).' puntines gold!</span>';
+	$config['creditos']['#qcreditos']		= '<span class="qcreditos">No pos qué perrón, te quito</span><span class="qcreditos-total">: '.rand(2,1000).' puntines por pendejo...</span>';
 	
 	/***Fortunas***/
 	$config['fortunas'] = array();
@@ -375,7 +375,7 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['namefag']['lastname'] = array();
 	
 	// define tantos "firstname" y "lastname" como quieras
-	/** Nota como género masculino seimpre aparece en el caso true y el femenino en el caso false
+	/** Nota como género masculino siempre aparece en el caso true y el femenino en el caso false (variable $g)
 	Puedes ponerlo como quieras pero deberás ser consistente en el orden **/
 	
 	$config['namefag']['firstname'][] = 'Aspie';
