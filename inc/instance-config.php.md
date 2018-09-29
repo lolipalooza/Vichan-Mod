@@ -103,7 +103,7 @@ __Nota__: no necesariamente es la configuración más óptima.
 	// "Wiki" markup syntax ($config['wiki_markup'] in pervious versions):
 	
 	/** Puedes establecer la ruta que desees para el archivo, y deberás subir el archivo a dicha ruta para que funcione, obviamente! **/
-	$config['markup'][] = array("*:v*", "<img src=\"".$config['root']."/img/smileys/pacman.png\" alt=\":v\" title=\"Pacman\">");
+	$config['markup'][] = array('*:v*', '<img src="'.$config['root'].'/img/smileys/pacman.png" alt=":v" title="Pacman">');
 	
 	// Symbols
 	$config['markup'][] = array("/'''(.+?)'''/", "<strong>\$1</strong>");
@@ -166,6 +166,39 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
  *  Display settings
  * ====================
  */
+
+	// Tinyboard has been translated into a few langauges. See inc/locale for available translations.
+	$config['locale'] = 'en'; // (en, ru_RU.UTF-8, fi_FI.UTF-8, pl_PL.UTF-8)
+
+	// Timezone to use for displaying dates/tiems.
+	$config['timezone'] = 'America/Los_Angeles';
+	// The format string passed to strftime() for displaying dates.
+	// http://www.php.net/manual/en/function.strftime.php
+	$config['post_date'] = '%m/%d/%y (%a) %H:%M:%S';
+	// Same as above, but used for "you are banned' pages.
+	$config['ban_date'] = '%A %e %B, %Y';
+	
+	// The names on the post buttons. (On most imageboards, these are both just "Post").
+	$config['button_newtopic'] = _('Nuevo Hilo');
+	$config['button_reply'] = _('Responder');
+	
+	// Additional lines added to the footer of all pages.
+	$config['footer'][] = _('All trademarks, copyrights, comments, and images on this page are owned by and are the responsibility of their respective parties.');
+	
+	// Optional banner image at the top of every page.
+	$config['url_banner'] = $config['root'] . 'banner.php';
+	// Banner dimensions are also optional. As the banner loads after the rest of the page, everything may be
+	// shifted down a few pixels when it does. Making the banner a fixed size will prevent this.
+	$config['banner_width'] = 340;
+	$config['banner_height'] = 120;
+	
+	$config['banners_folder'] = 'img/banners/';		// la ruta relativa a la carpeta donde están tus banners
+	
+	$config['banners'] = array();
+	
+	// Agrega cuanrtos banners desees
+	$config['banners'][] = "filename.fileextension";
+	$config['banners'][] = "my-banner.jpg";
 
 	/*
 	 * For lack of a better name, “boardlinks” are those sets of navigational links that appear at the top
