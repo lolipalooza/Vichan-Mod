@@ -196,7 +196,7 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	
 	$config['banners'] = array();
 	
-	// Agrega cuanrtos banners desees
+	// Agrega cuantos banners desees
 	$config['banners'][] = "filename.fileextension";
 	$config['banners'][] = "my-banner.jpg";
 
