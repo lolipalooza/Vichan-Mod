@@ -1208,7 +1208,7 @@ div.mix {
 }
 
 /*=====================================
- * Formatos para textos
+ * Formatos para textos (Markups)
  ======================================*/
 span.blink {
     animation-duration: 1s;
@@ -1238,6 +1238,11 @@ span.smooth-blink {
 }
 span.quote-alt {
 	color: #b83434;
+}
+span.blue-text {
+	background: #FAF8F8;
+	color: #3060A8;
+	padding: 0 1px;
 }
 
 /*=====================================

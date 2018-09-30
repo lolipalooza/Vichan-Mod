@@ -115,6 +115,7 @@ __Nota__: no necesariamente es la configuración más óptima.
 	$config['markup'][] = array("/\^\^\^(.+?)\^\^\^/", "<span class=\"smooth-blink\">\$1</span>");
 	$config['markup'][] = array("/\^\^(.+?)\^\^/", "<span class=\"blink\">\$1</span>");
 	$config['markup'][] = array("/^&lt;(.+?)$/m", "<span class=\"quote-alt\">&lt;\$1</span>");
+	$config['markup'][] = array("/\(\(\((.+?)\)\)\)/", "<span class=\"blue-text\">(((\$1)))</span>");
 	
 	// BBCodes
 	$config['markup'][] = array("/\[b\](.+?)\[\/b\]/", "<strong>\$1</strong>");
