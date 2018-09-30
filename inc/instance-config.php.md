@@ -305,7 +305,11 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	
 	$config['additional_javascript'][] = 'js/cartonchan.js';
 	
+	$config['additional_javascript'][] = 'js/happy-chon.js';
+	// $config['additional_javascript'][] = 'js/shinku.js';
+	
 	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
+	
 /*
  * ====================
  *  Video embedding
