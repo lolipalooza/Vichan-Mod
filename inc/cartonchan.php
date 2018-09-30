@@ -53,10 +53,15 @@ function email_ruleta($post)
 		{
 			$mensajes = $config['ruleta']['mensajes'];
 			$mensaje = $mensajes[ rand(0,sizeof($mensajes)-1) ];
-		
-			switch(rand(0,5))
+			$chance = rand(1,6);
+			
+			if ( isset($config['ruleta']['ban']['always']) && $config['ruleta']['ban']['always'] ) {
+					$ruleta = $config['ruleta']['body1'] . ' ' . sprintf( $config['ruleta']['body2'], $mensaje );
+					$post['fuscazo'] = true;
+			}
+			else switch(rand(1,$chance))
 			{
-				case 0:
+				case 1:
 					$ruleta = $config['ruleta']['body1'] . ' ' . sprintf( $config['ruleta']['body2'], $mensaje );
 					$post['fuscazo'] = true;
 					break;
@@ -76,7 +81,7 @@ function ruleta___darse_un_fuscazo($ip, $boards)
 {
 	global $config;
 	
-	$tiempo = "10s";
+	$tiempo =$config['ruleta']['ban']['time'];
 	$mensajes = $config['ruleta']['ban']['mensajes'];
 	$mensaje = $mensajes[ rand(0,sizeof($mensajes)-1) ];
 	Bans::new_ban($ip, $mensaje, $tiempo, $boards);

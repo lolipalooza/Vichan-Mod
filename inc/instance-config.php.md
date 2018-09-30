@@ -369,6 +369,13 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 		<span class="%s-result">'.(rand(0,1)?'cara':'cruz').'</span><br /><br />';
 	
 	/***Ruleta***/
+	// Tiempo que dura el ban cuando te disparas
+	// Ejemplos de Formato: 1y, 10d10h10m10s, 30d, 2h30m, 1m30s, 1s
+	$config['ruleta']['ban']['time'] = "10m";
+	
+	// Activar la opción "siempre darse un tiro", solo para debuggear
+	$config['ruleta']['ban']['always'] = true;
+	
 	$config['ruleta']['mensajes'] = array();
 	
 	// El mensaje que aparece cuando te das un tiro
