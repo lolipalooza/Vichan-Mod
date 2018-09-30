@@ -138,6 +138,15 @@ __Nota__: no necesariamente es la configuración más óptima.
 	$config['max_width'] = 10000;
 	$config['max_height'] = $config['max_width'];
 
+/*
+ * ====================
+ *  Board settings
+ * ====================
+ */
+
+	// The default name (ie. Anonymous). Can be an array - in that case it's picked randomly from the array.
+	// Example: $config['anonymous'] = array('Bernd', 'Senpai', 'Jonne', 'ChanPro');
+	// $config['anonymous'] = 'Anonymous';
 
 /*
  * ====================
@@ -237,6 +246,12 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['stylesheets']['TestOrange'] = 'testorange.css';
 	$config['stylesheets']['V8ch'] = 'v8ch.css';
 	$config['stylesheets']['Wasabi'] = 'wasabi.css';*/
+	
+	// The default stylesheet to use.
+	$config['default_stylesheet'] = array('Yotsuba B', $config['stylesheets']['Yotsuba B']);
+
+	// Make stylesheet selections board-specific.
+	$config['stylesheets_board'] = true;
 	
 	/*
 	 * For lack of a better name, “boardlinks” are those sets of navigational links that appear at the top
