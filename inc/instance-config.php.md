@@ -171,19 +171,19 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['locale'] = 'en'; // (en, ru_RU.UTF-8, fi_FI.UTF-8, pl_PL.UTF-8)
 
 	// Timezone to use for displaying dates/tiems.
-	$config['timezone'] = 'America/Los_Angeles';
+	$config['timezone'] = 'America/La_Paz';
 	// The format string passed to strftime() for displaying dates.
 	// http://www.php.net/manual/en/function.strftime.php
-	$config['post_date'] = '%m/%d/%y (%a) %H:%M:%S';
+	$config['post_date'] = '%d/%b/%Y (%a) %I:%M %p';
 	// Same as above, but used for "you are banned' pages.
 	$config['ban_date'] = '%A %e %B, %Y';
 	
 	// The names on the post buttons. (On most imageboards, these are both just "Post").
 	$config['button_newtopic'] = _('Nuevo Hilo');
 	$config['button_reply'] = _('Responder');
-	
+		
 	// Additional lines added to the footer of all pages.
-	$config['footer'][] = _('All trademarks, copyrights, comments, and images on this page are owned by and are the responsibility of their respective parties.');
+	$config['footer'][] = _('Copyright © '.date('Y').' La Sociedad de los Lolchanesmuertos.'); // Cambia ésto a tu gusto.
 	
 	// Optional banner image at the top of every page.
 	$config['url_banner'] = $config['root'] . 'banner.php';
@@ -200,6 +200,43 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['banners'][] = "filename.fileextension";
 	$config['banners'][] = "my-banner.jpg";
 
+	// Custom stylesheets available for the user to choose. See the "stylesheets/" folder for a list of
+	// available stylesheets (or create your own).
+	$config['stylesheets']['Yotsuba B'] = ''; // Default; there is no additional/custom stylesheet for this.
+	$config['stylesheets']['Yotsuba'] = 'yotsuba.css';
+	/*$config['stylesheets']['Futaba'] = 'futaba.css';
+	$config['stylesheets']['Dark'] = 'dark.css';
+	$config['stylesheets']['Burichan'] = 'burichan.css';
+	$config['stylesheets']['Caffe'] = 'caffe.css';
+	$config['stylesheets']['Confraria'] = 'confraria.css';
+	$config['stylesheets']['Confraria'] = 'confraria.css';
+	$config['stylesheets']['Dark Roach'] = 'dark_roach.css';
+	$config['stylesheets']['Favela'] = 'favela.css';
+	$config['stylesheets']['Ferus'] = 'ferus.css';
+	$config['stylesheets']['Futaba+Vichan'] = 'futaba+vichan.css';
+	$config['stylesheets']['Futaba Light'] = 'futaba-light.css';
+	$config['stylesheets']['gentoochan'] = 'gentoochan.css';
+	$config['stylesheets']['greendark'] = 'greendark.css';
+	$config['stylesheets']['Jungle'] = 'jungle.css';
+	$config['stylesheets']['Luna'] = 'luna.css';
+	$config['stylesheets']['Miku'] = 'miku.css';
+	$config['stylesheets']['Nigrachan'] = 'nigrachan.css';
+	$config['stylesheets']['Northboard Cb'] = 'northboard_cb.css';
+	$config['stylesheets']['Notsuba'] = 'notsuba.css';
+	$config['stylesheets']['Novo Jungle'] = 'novo_jungle.css';
+	$config['stylesheets']['Photon'] = 'photon.css';
+	$config['stylesheets']['Piwnichan'] = 'piwnichan.css';
+	$config['stylesheets']['Ricechan'] = 'ricechan.css';
+	$config['stylesheets']['Roach'] = 'roach.css';
+	$config['stylesheets']['Rugby'] = 'rugby.css';
+	$config['stylesheets']['Sharp'] = 'sharp.css';
+	$config['stylesheets']['Stripes'] = 'stripes.css';
+	$config['stylesheets']['Szalet'] = 'szalet.css';
+	$config['stylesheets']['Terminal2'] = 'terminal2.css';
+	$config['stylesheets']['TestOrange'] = 'testorange.css';
+	$config['stylesheets']['V8ch'] = 'v8ch.css';
+	$config['stylesheets']['Wasabi'] = 'wasabi.css';*/
+	
 	/*
 	 * For lack of a better name, “boardlinks” are those sets of navigational links that appear at the top
 	 * and bottom of board pages. They can be a list of links to boards and/or other pages such as status
