@@ -301,7 +301,7 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 
 	$config['additional_javascript'][] = 'js/webm-settings.js';
 	$config['additional_javascript'][] = 'js/expand-video.js';
-	$config['additional_javascript'][] = 'js/youtube.js';
+	$config['additional_javascript'][] = 'js/ytlinks.js';
 	
 	$config['additional_javascript'][] = 'js/cartonchan.js';
 	
@@ -324,7 +324,12 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	$config['embedding'] = array(
 		array(
 			'/^https?:\/\/(\w+\.)?youtube\.com\/watch\?v=([a-zA-Z0-9\-_]{10,11})(&.+)?$/i',
-			'<iframe style="float: left;margin: 10px 20px;" width="%%tb_width%%" height="%%tb_height%%" frameborder="0" id="ytplayer" src="https://www.youtube.com/embed/$2" allowfullscreen></iframe>'
+			'<p class="fileinfo ytinfo"><a href="https://www.youtube.com/watch?v=$2" target="_blank">Enlace a YouTube</a></p>
+			<div class="video-container" data-servicio="youtube" data-video="$2">
+				<a href="https://www.youtube.com/watch?v=$2" target="_blank" class="file">
+					<img style="max-width:%%tb_width%%px" src="//img.youtube.com/vi/$2/0.jpg" class="post-image">
+				</a>
+			</div>'
 		),
 		array(
 			'/^https?:\/\/(\w+\.)?vimeo\.com\/(\d{2,10})(\?.+)?$/i',
