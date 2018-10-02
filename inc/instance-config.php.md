@@ -61,6 +61,22 @@ __Nota__: no necesariamente es la configuración más óptima.
 
 /*
  * ====================
+ *  Flood/spam settings
+ * ====================
+ */
+
+	// Enable reCaptcha to make spam even harder. Rarely necessary.
+	$config['recaptcha'] = false;
+
+	// Minimum time between between each post by the same IP address.
+	$config['flood_time'] = 10;
+	// Minimum time between between each post with the exact same content AND same IP address.
+	$config['flood_time_ip'] = 120;
+	// Same as above but by a different IP address. (Same content, not necessarily same IP address.)
+	$config['flood_time_same'] = 30;
+
+/*
+ * ====================
  *  Post settings
  * ====================
  */
@@ -84,6 +100,14 @@ __Nota__: no necesariamente es la configuración más óptima.
 	// Example: Custom tripcodes. The below example makes a tripcode of "#test123" evaluate to "!HelloWorld".
 	// Example: Custom secure tripcode.
 	//$config['custom_tripcode']['##securetrip'] = '!!somethingelse';
+	
+	
+
+	// Use semantic URLs for threads, like /b/res/12345/daily-programming-thread.html
+	$config['slugify'] = true;
+	
+	// Max size for slugs
+	$config['slug_max_size'] = 80;
 	
 /*
 * ====================
@@ -290,25 +314,80 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	// scripts.
 	$config['additional_javascript'] = array();
 
-	$config['additional_javascript'][] = 'js/jquery.min.js';
-	$config['additional_javascript'][] = 'js/inline-expanding.js';
-	$config['additional_javascript'][] = 'js/auto-reload.js';
-	$config['additional_javascript'][] = 'js/post-hover.js';
-	$config['additional_javascript'][] = 'js/style-select.js';
-	$config['additional_javascript'][] = 'js/show-op.js';
-	$config['additional_javascript'][] = 'js/show-backlinks.js';
-	$config['additional_javascript'][] = 'js/show-own-posts.js';
+	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
+	
+	$config['api']['enabled'] = true;
 
-	$config['additional_javascript'][] = 'js/webm-settings.js';
+	$config['additional_javascript'][] = 'js/jquery.min.js';
+	$config['additional_javascript'][] = 'js/strftime.min.js';
+	$config['additional_javascript'][] = 'js/jquery.mixitup.min.js';
+	$config['additional_javascript'][] = 'js/jquery-ui.custom.min.js';
+	$config['additional_javascript'][] = 'js/ajax.js';
+	$config['additional_javascript'][] = 'js/ajax-post-controls.js';
+	$config['additional_javascript'][] = 'js/auto-reload.js';
+	//$config['additional_javascript'][] = 'js/catalog.js';
+	$config['additional_javascript'][] = 'js/catalog-link.js';
+	$config['additional_javascript'][] = 'js/catalog-search.js';
+	$config['additional_javascript'][] = 'js/download-original.js';
+	$config['additional_javascript'][] = 'js/expand.js';
+	//$config['additional_javascript'][] = 'js/expand-all-images.js';
+	$config['additional_javascript'][] = 'js/expand-too-long.js';
 	$config['additional_javascript'][] = 'js/expand-video.js';
-	$config['additional_javascript'][] = 'js/ytlinks.js';
+	//$config['additional_javascript'][] = 'js/favorites.js'; // may conflict with watch.js and compact-boardlist.js
+	$config['additional_javascript'][] = 'js/file-selector.js';
+	$config['additional_javascript'][] = 'js/fix-report-delete-submit.js';
+	//$config['additional_javascript'][] = 'js/forced-anon.js';
+	//$config['additional_javascript'][] = 'js/gallery-view.js';
+	//$config['additional_javascript'][] = 'js/hide-images.js';  // happy-chon ya tiene su propio "modo seguro"
+	$config['additional_javascript'][] = 'js/hide-threads.js';
+	//$config['additional_javascript'][] = 'js/id_colors.js';
+	//$config['additional_javascript'][] = 'js/id_highlighter.js';
+	$config['additional_javascript'][] = 'js/infinite-scroll.js';
+	//$config['additional_javascript'][] = 'js/inline.js';
+	//$config['additional_javascript'][] = 'js/inline-expanding.js';	// Conflicto con happy-chon
+	//$config['additional_javascript'][] = 'js/inline-expanding-filename.js';	// Conflicto con happy-chon
+	//$config['additional_javascript'][] = 'js/live-index.js';	// Conflicto con happy-chon
+	//$config['additional_javascript'][] = 'js/local-time.js';
+	//$config['additional_javascript'][] = 'js/mobile-style.js';	// LATER
+	//$config['additional_javascript'][] = 'js/compact-boardlist.js';
+	//$config['additional_javascript'][] = 'js/watch.js';	// Conflicto con happy-chon
+	//$config['additional_javascript'][] = 'js/multi-image.js';
+	
+	//$config['additional_javascript'][] = 'js/options.js';	// LATER
+	//$config['additional_javascript'][] = 'js/style-select.js';	// LATER
+	//$config['additional_javascript'][] = 'js/options/general.js';
+	//$config['additional_javascript'][] = 'js/no-animated-gif.js';
+	//$config['additional_javascript'][] = 'js/options/user-css.js';
+	//$config['additional_javascript'][] = 'js/options/user-js.js';
+	
+	//$config['additional_javascript'][] = 'js/own-board.js'; // still on developement
+	$config['additional_javascript'][] = 'js/post-hover.js';
+	$config['additional_javascript'][] = 'js/quick-post-controls.js';
+	$config['additional_javascript'][] = 'js/quick-reply.js';
+	//$config['additional_javascript'][] = 'js/quote-selection.js';
+	//$config['additional_javascript'][] = 'js/save-user_flag.js';
+	//$config['additional_javascript'][] = 'js/instance.settings.js';
+	//$config['additional_javascript'][] = 'js/show-backlinks.js';	// Conflicto con happy-chon
+	$config['additional_javascript'][] = 'js/show-op.js';
+	$config['additional_javascript'][] = 'js/show-own-posts.js';
+	//$config['additional_javascript'][] = 'js/smartphone-spoiler.js';
+	//$config['additional_javascript'][] = 'js/threadscroll.js';
+	//$config['additional_javascript'][] = 'js/thread-stats.js';
+	//$config['additional_javascript'][] = 'js/thread-watcher.js';
+	//$config['additional_javascript'][] = 'js/titlebar-notifications.js';
+	//$config['additional_javascript'][] = 'js/toggle-images.js'; // Adds a "Hide all images" in top of page under form
+	//$config['additional_javascript'][] = 'js/toggle-locked-threads.js';
+	//$config['additional_javascript'][] = 'js/treeview.js';
+	$config['additional_javascript'][] = 'js/upload-selection.js';
+	$config['additional_javascript'][] = 'js/webm-settings.js';
+	$config['additional_javascript'][] = 'js/wPaint/8ch.js';
+	$config['additional_javascript'][] = 'js/wpaint.js';
+	$config['additional_javascript'][] = 'js/ytlinks.js'; // Conflicto con youtube.js - ytlinks.js es mejor
 	
 	$config['additional_javascript'][] = 'js/cartonchan.js';
-	
 	$config['additional_javascript'][] = 'js/happy-chon.js';
-	// $config['additional_javascript'][] = 'js/shinku.js';
 	
-	/** Todo nuevo javascript que desees integrar a tus boards debe ir aquí **/
+	//$config['additional_javascript'][] = 'js/shinku.js';
 	
 /*
  * ====================
