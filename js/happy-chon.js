@@ -6030,11 +6030,11 @@ Post.prototype = {
 					e.preventDefault();
 				} else {
 					temp = el.parentNode;
-					if(temp === this.trunc) {
+					/*if(temp === this.trunc) {// Click en "Post too long. Click [here] to view the full text"	// Conflicto con vichan
 						this._getFull(temp, false);
 						e.preventDefault();
 						e.stopPropagation();
-					} else if(aib.brit) {
+					} else*/ if(aib.brit) {
 						if(temp.className === 'reflink') {
 							el.removeAttribute('onclick');
 							el.target = '_blank';
@@ -6239,7 +6239,7 @@ Post.prototype = {
 		this._checkVisib(this.num, this.index, this.isOp, thr);
 		if(!this.hidden && Cfg['expandPosts'] === 1) {
 			var node = this.trunc;
-			if(node) {
+			if(node) {console.log("node = this.trunc");// Click en "Post too long. Click [here] to view the full text"	// Conflicto con vichan
 				this._getFull(node, false);
 			}
 		}
@@ -7133,13 +7133,13 @@ Thread.prototype = {
 			pr.showMainReply();
 			$del($q(aib.qOmitted + ', .de-omitted', thrEl));
 			if(!this._loadedOnce) {
-				if(op.trunc) {
-					op.updateMsg(newOp);
+				if(op.trunc) {// Click en "Post too long. Click [here] to view the full text"	// Conflicto con vichan
+					op.updateMsg(newOp);console.log("op.trunc");
 				}
 				op.ref = void 0;
 				for(post = op.next; post; post = post.next) {
-					if(post.trunc) {
-						post.updateMsg(els[post.count - 1]);
+					if(post.trunc) {// Click en "Post too long. Click [here] to view the full text"	// Conflicto con vichan
+						post.updateMsg(els[post.count - 1]);console.log("post.trunc");
 					}
 				}
 			}
