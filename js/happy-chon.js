@@ -17,7 +17,7 @@ defaultCfg = {
 	'menuHiddBtn':	0,		// menu on hide button
 	'hideRefPsts':	0,		// hide post with references to hidden posts
 	'delHiddPost':	0,		// delete hidden posts
-	'updThread':	1,		// update threads [0=off, 1=auto, 2=click]
+	'updThread':	0,		// update threads [0=off, 1=auto, 2=click]
 	'updThrDelay':	30,		//		threads update interval in sec
 	'favIcoBlink':	1,		//		favicon blinking, if new posts detected
 	'desktNotif':	0,		//		desktop notifications, if new posts detected
