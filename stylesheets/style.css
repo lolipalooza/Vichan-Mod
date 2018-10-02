@@ -1288,3 +1288,10 @@ span.fortuna {background: #01aa55; color: yellow; font-weight: bold;}
 #de-panel {
 	z-index: 19999999!important; /* Poner la barra del happy-chon por encima del banner de 000webhost. */
 }
+
+/*=====================================
+ * Other fixes
+ ======================================*/
+div.pages a:nth-child(4) {
+	display: none;
+}
