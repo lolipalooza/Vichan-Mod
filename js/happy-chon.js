@@ -7309,7 +7309,7 @@ Thread.prototype = {
 		}
 		this.last = lastPost;
 		node.style.counterReset = 'de-cnt ' + omt;
-		node.removeAttribute('id');
+		//node.removeAttribute('id'); // Conflicto con vichan
 		visPosts = Math.max(visPosts, len);
 	},
 	_parsePosts: function(nPosts, from, omt) {
