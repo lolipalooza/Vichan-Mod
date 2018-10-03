@@ -1292,7 +1292,10 @@ span.fortuna {background: #01aa55; color: yellow; font-weight: bold;}
 /*=====================================
  * Other fixes
  ======================================*/
-div.pages a:nth-child(4),
+div.pages a:last-child,/*div.pages a:nth-child(4),*/
 div.styles {
+	display: none;
+}
+#quick-reply select {
 	display: none;
 }

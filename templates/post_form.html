@@ -32,29 +32,24 @@
 					{% if not config.always_noko %}<option value="noko">noko</option>{% endif %}
 				</select>
 				{% else %}
-				<input type="text" name="email" size="25" maxlength="40" autocomplete="off">
+				<input type="text" name="email" size="25" maxlength="40" autocomplete="off" list="email-options">
 				{% endif %}
 				{{ antibot.html() }}
 				{% if not (not (config.field_disable_subject or (id and config.field_disable_reply_subject)) or (mod and post.mod|hasPermission(config.mod.bypass_field_disable, board.uri))) %}
 				<input accesskey="s" style="margin-left:2px;" type="submit" name="post" value="{% if id %}{{ config.button_reply }}{% else %}{{ config.button_newtopic }}{% endif %}" />{% if config.spoiler_images %} <input id="spoiler" name="spoiler" type="checkbox"> <label for="spoiler">{% trans %}Spoiler Image{% endtrans %}</label>				{% endif %}
 				{% endif %}
 				{{ antibot.html() }}
-				<select id="email-sel" style="margin-left:2px;">
+				<select class="email-sel" style="margin-left:2px;">
 					<option value=""></option>
-					<option value="sage">Sageru</option>
-					<option value="noko">Noko</option>
-					<option value="creditos">Dar Créditos</option>
-					<option value="qcreditos">Quitar Créditos</option>
-					<option value="ruleta">Ruleta</option>
-					<option value="dados2">Dados de 2 Caras</option>
-					<option value="dados6">Dados de 6 Caras</option>
-					<option value="dados10">Dados de 10 Caras</option>
-					<option value="dados20">Dados de 20 Caras</option>
-					<option value="dados100">Dados de 100 Caras</option>
-					<option value="dados999">Dados de 999 Caras</option>
-					<option value="fortuna">Fortuna</option>
-					<option value="namefag">Namefag</option>
+					{% for flag, text in config.toys %}
+						<option value="{{ flag }}">{{ text }}</option>
+					{% endfor %}
 				</select>
+				<datalist id="email-options">
+					{% for flag, text in config.toys %}
+						<option value="{{ flag }}">
+					{% endfor %}
+				</datalist>
 			</td>
 		</tr>{% endif %}
 		{% if not (config.field_disable_subject or (id and config.field_disable_reply_subject)) or (mod and post.mod|hasPermission(config.mod.bypass_field_disable, board.uri)) %}<tr>
