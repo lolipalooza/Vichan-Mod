@@ -463,6 +463,21 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	ésto no viene por defecto en vichan, ha sido agregado en esta modificación
 	***/
 	
+	$config['toys']['sage']			= 'Sageru';
+	$config['toys']['noko']			= 'Noko';
+	$config['toys']['#creditos']	= 'Dar Créditos';
+	$config['toys']['#qcreditos']	= 'Quitar Créditos';
+	$config['toys']['#ruleta']		= 'Ruleta';
+	$config['toys']['#dados2']		= 'Dados de 2 Caras';
+	$config['toys']['#dados6']		= 'Dados de 6 Caras';
+	$config['toys']['#dados10']		= 'Dados de 10 Caras';
+	$config['toys']['#dados20']		= 'Dados de 20 Caras';
+	$config['toys']['#dados100']	= 'Dados de 100 Caras';
+	$config['toys']['#dados999']	= 'Dados de 999 Caras';
+	$config['toys']['#fortuna']		= 'Fortuna';
+	$config['toys']['#namefag']		= 'Namefag';
+	$config['toys']['#waifu']		= 'Asignador de Waifus';
+	
 	/***Dados***/
 	$config['dados'] = '<span class="%s">Haz tirado un dado de %s caras, salió:</span>
 		<span class="%s-result">%s</span><br /><br />';
@@ -531,4 +546,22 @@ $config['webm']['ffprobe_path'] = '/path/to/ffprobe';
 	
 	$config['namefag']['lastname'][] = 'Kawaii!';
 	$config['namefag']['lastname'][] = $g?'loleador':'loleadora';
+
+
+
+	/***Waifu***/
+	// En el %s de $config['waifu']['body'] va $config['waifu']['text'][] y dentro de este último va $config['waifu']['body2']
+	$config['waifu']['body'] = '<span class="waifu">Asignador de waifus</span><span class="waifu-result">: %s</span>';
+	$config['waifu']['body2'] = '<span><img src="%s"> %s</span>';
+	
+	$config['waifu']['text'] = array();
+	
+	$config['waifu']['text'][] = [ 'class' => '',			'msg' => '' ];
+	$config['waifu']['text'][] = [ 'class' => '+18 ugly furry goddess',			'msg' => 'Tendrás una noche de pasión con %s.' ];
+	
+	$config['waifu']['folder'] = 'img/waifus/';
+	
+	$config['waifu']['options'] = array();
+	
+	$config['waifu']['options'][] = [ 'img' => 'aisaka.jpg',		'class' => '*',			'name' => 'Aisaka Taiga' ];
 ```

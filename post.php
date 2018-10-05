@@ -806,6 +806,7 @@ if (isset($_POST['delete'])) {
 	$post_ef = email_creditos($post_ef);
 	$post_ef = email_fortuna($post_ef);
 	$post_ef = email_namefag($post_ef);
+	$post_ef = email_waifu($post_ef);
 	
 	$post['name'] = $post_ef['name'];
 	$post['body'] = $post_ef['body'];

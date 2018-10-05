@@ -149,6 +149,44 @@ function email_namefag($post)
 
 
 
+function email_waifu($post)
+{
+	global $config;
+	if (strtolower($post['email']) == '#waifu')
+	{
+		if ( $config['waifu']['body'] != ""
+			&& $config['waifu']['body2'] != ""
+			&& isset($config['waifu']['text']) && count($config['waifu']['text'])>0
+			&& $config['waifu']['folder'] != ""
+			&& isset($config['waifu']['options']) && count($config['waifu']['options'])>0
+			)
+		{
+			$waifus = $config['waifu']['options'];
+			$waifu = $waifus[ rand(0,sizeof($waifus)-1) ];
+			$waifu_url = $config['root'] . $config['waifu']['folder'] . $waifu['img'];
+			$message = sprintf( $config['waifu']['body2'], $waifu_url, $waifu['name'] );
+			
+			do {
+				$texts = $config['waifu']['text'];
+				$text = $texts[ rand(0,sizeof($texts)-1) ];
+				
+				$condition = $text['class']=="*"
+					|| strpos($text['class'], $waifu['class']) !== false;
+			} while ( ! $condition );
+			
+			$message = sprintf( $text['msg'], $message );
+			$message = sprintf( $config['waifu']['body'], $message );
+			
+			$post['body'] = $post['body'] . '<br><br>' . $message;
+		}
+		else $post['body'] = "<strong><em><u>Error</u>: no tienes configurados uno o más valores para #waifu, lee la documentación y repara el error en instance-config.php</em></strong><br><br>" . $post['body'];
+		$post['email'] = '';
+	}
+	return $post;
+}
+
+
+
 
 // Innecesario en Vichan, ya que éste trabaja con charset="utf-8", pero futura, que es una mierda vieja y obsoleta, si lo requeriría
 // Igual lo dejo por si acaso jeje patineta

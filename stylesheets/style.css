@@ -1282,6 +1282,37 @@ span.qcreditos-total { background: rgb(180, 43, 43); color: rgb(255, 175, 124); 
 /**** Fortuna ****/
 span.fortuna {background: #01aa55; color: yellow; font-weight: bold;}
 
+/**** Waifu ****/
+span.waifu {
+	background: #bb75c3;
+	color: white;
+	font-weight: bold;
+	font-family: 'Times New Roman', sans-serif;
+	font-size: 1.2em;
+	border-radius: 12px 0 0 0;
+	display: inline-block;
+	font-style: italic;
+	padding: 4px;
+}
+
+span.waifu-result {
+	font-family: 'Verdana', sans-serif;
+	color: #650072;
+	padding: 4px 4px 4px 0;
+}
+
+span.waifu-result img {
+	max-width: 50px;
+	vertical-align: middle;
+	border-radius: 15px;
+}
+
+span.waifu-result span {
+	font-family: cursive, sans-serif;
+	font-weight: bold;
+	padding: 0 8px;
+}
+
 /*=====================================
  * Happy-chon fixes
  ======================================*/
