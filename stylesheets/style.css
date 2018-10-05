@@ -1330,3 +1330,6 @@ div.styles {
 #quick-reply select {
 	display: none;
 }
+span.spoiler.show {
+	color: white;
+}

@@ -13,4 +13,8 @@ onready(function () {
 		var sel = $("input[name=email]").val();
 		$(".email-sel").val( sel );
 	}).on( 'change', asdf );
+	
+	$(".spoiler").click(function() {
+		$(this).addClass("show");
+	});
 });
