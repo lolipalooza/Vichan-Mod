@@ -162,6 +162,12 @@ __Nota__: no necesariamente es la configuración más óptima.
 	$config['max_width'] = 10000;
 	$config['max_height'] = $config['max_width'];
 
+	// Allowed additional file extensions (not images; downloadable files).
+	$config['allowed_ext_files'][] = 'swf';
+
+	// Thumbnail to use for the non-image file uploads.
+	$config['file_icons']['swf'] = 'swf.png';
+
 /*
  * ====================
  *  Board settings
