@@ -7542,7 +7542,7 @@ function Initialization() {
 	url = (window.location.pathname || '').match(new RegExp(
 		'^(?:\\/?([^\\.]*?)\\/?)?' +
 		'(' + regQuote(aib.res) + ')?' +
-		'(\\d+|index|wakaba|futaba)?' +
+		'(?:(\\d+)-[^\\/\\.]*?|index|wakaba|futaba)?' +
 		'(\\.(?:[a-z]+))?$'
 	));
 	brd = url[1] || (aib.dfwk ? 'df' : '');
@@ -8766,7 +8766,7 @@ function initPage() {
 			}));
 		}
 	} else {
-		setTimeout(window.scrollTo, 20, 0, 0);
+		//setTimeout(window.scrollTo, 20, 0, 0);	// vichan conflict!
 	}
 	updater = new initThreadUpdater(doc.title, TNum && Cfg['updThread'] === 1);
 }
